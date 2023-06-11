@@ -1,11 +1,12 @@
-import './App.css';
+import "./App.css";
+import FormSection from "./components/FormSection";
 
 function App() {
-  return (
-    <div className="App">
-      Hello, World
-    </div>
-  );
+    return (
+        <div className="App">
+            <FormSection />
+        </div>
+    );
 }
 
 export default App;
