@@ -1,4 +1,4 @@
- #stage 1
+#stage 1
 FROM node:16.17.0 as node
 WORKDIR /app
 COPY . .
