@@ -41,7 +41,7 @@ const SearchBar = ({ onSetFlights }) => {
     }, [query]);
 
     useEffect(() => {
-        onSetFlights(flights);
+        if (onSetFlights) onSetFlights(flights);
     }, [flights, onSetFlights]);
 
     const handleClose = () => {
