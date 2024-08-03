@@ -45,6 +45,14 @@ const EditFlightModal = ({ flight, onClose, onSave }) => {
                         <input type="text" name="flight_id" value={editedFlight.flight_id} onChange={handleChange} required />
                     </label>
                     <label>
+                        From:
+                        <input type="text" name="from" value={editedFlight.from} onChange={handleChange} required />
+                    </label>
+                    <label>
+                        To:
+                        <input type="text" name="to" value={editedFlight.to} onChange={handleChange} required />
+                    </label>
+                    <label>
                         Airline:
                         <input type="text" name="airline" value={editedFlight.airline} onChange={handleChange} required />
                     </label>

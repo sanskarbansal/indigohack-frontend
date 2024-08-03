@@ -1,0 +1,47 @@
+.search-bar {
+    margin: 20px 0px 20px 20px;
+    position: relative;
+    width: 300px;
+    color: black;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar .close-button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+}
+
+.search-bar ul.dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.search-bar ul.dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-bar ul.dropdown li:hover {
+    background-color: #f0f0f0;
+}

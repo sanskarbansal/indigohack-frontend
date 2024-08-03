@@ -5,6 +5,7 @@ import "./Flights.css";
 import { AuthContext } from "../../AuthContext";
 import { useSocket } from "../../useState";
 import { fetchFlights, fetchSubscribedFlights, subscribeFlight, unSubscribeFlight } from "../../services/api";
+import SearchBar from "../SearchBar";
 
 const Flights = () => {
     const [flights, setFlights] = useState([]);
@@ -59,17 +60,20 @@ const Flights = () => {
     };
 
     return (
-        <div className="flights">
-            {flights.map((flight) => (
-                <FlightCard
-                    key={flight._id}
-                    flight={flight}
-                    onSubscribe={handleSubscribe}
-                    isSubscribed={subscribedFlights.includes(flight._id)}
-                    onUnsubscribe={handleUnsubscribe}
-                />
-            ))}
-        </div>
+        <>
+            <SearchBar />
+            <div className="flights">
+                {flights.map((flight) => (
+                    <FlightCard
+                        key={flight._id}
+                        flight={flight}
+                        onSubscribe={handleSubscribe}
+                        isSubscribed={subscribedFlights.includes(flight._id)}
+                        onUnsubscribe={handleUnsubscribe}
+                    />
+                ))}
+            </div>
+        </>
     );
 };
 

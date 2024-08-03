@@ -47,12 +47,14 @@ const FlightList = () => {
     };
 
     return (
-        <div className="flight-list">
-            {flights?.map((flight) => (
-                <FlightCard key={flight._id} flight={flight} onEdit={handleEdit} onDelete={handleDelete} />
-            ))}
-            {editingFlight && <EditFlightModal flight={editingFlight} onClose={handleCloseModal} onSave={handleSave} />}
-        </div>
+        <>
+            <div className="flight-list">
+                {flights?.map((flight) => (
+                    <FlightCard key={flight._id} flight={flight} onEdit={handleEdit} onDelete={handleDelete} />
+                ))}
+                {editingFlight && <EditFlightModal flight={editingFlight} onClose={handleCloseModal} onSave={handleSave} />}
+            </div>
+        </>
     );
 };
 

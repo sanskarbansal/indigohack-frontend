@@ -26,6 +26,16 @@ const FlightCard = ({ flight, onEdit, onDelete }) => {
             <p>
                 <strong>Departure Gate:</strong> {flight.departure_gate}
             </p>
+            {flight.from && (
+                <p>
+                    <strong>From:</strong> {flight.from}
+                </p>
+            )}
+            {flight.to && (
+                <p>
+                    <strong>To:</strong> {flight.to}
+                </p>
+            )}
             <p>
                 <strong>Arrival Gate:</strong> {flight.arrival_gate}
             </p>

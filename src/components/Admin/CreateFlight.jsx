@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "../../axiosInstance";
 import "./CreateFlight.css";
 import { createNewFlight } from "../../services/api";
 
@@ -14,6 +13,8 @@ const CreateFlight = () => {
         scheduled_arrival: "",
         actual_departure: "",
         actual_arrival: "",
+        from: "",
+        to: "",
     });
 
     const handleInputChange = (e) => {
@@ -38,6 +39,8 @@ const CreateFlight = () => {
                 scheduled_arrival: "",
                 actual_departure: "",
                 actual_arrival: "",
+                from: "",
+                to: "",
             });
         } catch (error) {
             console.error("Error creating flight:", error);
@@ -71,6 +74,14 @@ const CreateFlight = () => {
                 <label>
                     Arrival Gate:
                     <input type="text" name="arrival_gate" value={newFlight.arrival_gate} onChange={handleInputChange} required />
+                </label>
+                <label>
+                    From:
+                    <input type="text" name="from" value={newFlight.from} onChange={handleInputChange} required />
+                </label>
+                <label>
+                    To:
+                    <input type="text" name="to" value={newFlight.to} onChange={handleInputChange} required />
                 </label>
                 <label>
                     Scheduled Departure:

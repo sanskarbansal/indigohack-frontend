@@ -10,6 +10,16 @@ const FlightCard = ({ flight, isSubscribed, onSubscribe, onUnsubscribe }) => (
         <p>
             <b>Status:</b> {flight.status}
         </p>
+        {flight.from && (
+            <p>
+                <strong>From:</strong> {flight.from}
+            </p>
+        )}
+        {flight.to && (
+            <p>
+                <strong>To:</strong> {flight.to}
+            </p>
+        )}
         <p>
             <b>Departure Gate</b>: {flight.departure_gate}
         </p>
