@@ -14,6 +14,7 @@ import FlightList from "./components/Admin/FlightList";
 import UserHomePage from "./components/User/HomePage";
 import Flights from "./components/User/Flights";
 import Notifications from "./components/User/Notifications";
+import SearchByStation from "./components/User/SearchByStation";
 
 const App = () => (
     <>
@@ -34,6 +35,7 @@ const App = () => (
                         }
                     >
                         <Route path="/notifications" element={<Notifications />} />
+                        <Route path="/search" element={<SearchByStation />} />
                         <Route index element={<Flights />} />
                     </Route>
 

@@ -15,6 +15,9 @@ const Navbar = () => {
                 <Link to="/notifications" className="nav-link">
                     Notifications
                 </Link>
+                <Link to="/search" className="nav-link">
+                    Search By Station
+                </Link>
             </div>
             <button className="logout-button" onClick={logout}>
                 Logout

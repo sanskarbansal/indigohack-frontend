@@ -3,9 +3,10 @@ import axios from "../axiosInstance";
 import { debounce } from "lodash";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+// eslint-disable-next-line react/prop-types
+const SearchBar = ({ onSetFlights }) => {
     const [query, setQuery] = useState("");
-    const [flightIds, setFlightIds] = useState([]);
+    const [flights, setFlights] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
 
@@ -15,16 +16,16 @@ const SearchBar = () => {
             setIsLoading(true);
             try {
                 const response = await axios.get(`/flights/search?search=${searchQuery}`);
-                setFlightIds(response.data.map((flight) => flight.flight_id));
+                setFlights(response.data.map((flight) => flight));
                 setShowDropdown(true);
             } catch (error) {
                 console.error("Error fetching flights:", error);
-                setFlightIds([]);
+                setFlights([]);
                 setShowDropdown(false);
             }
             setIsLoading(false);
         } else {
-            setFlightIds([]);
+            setFlights([]);
             setShowDropdown(false);
         }
     }, 300);
@@ -39,9 +40,13 @@ const SearchBar = () => {
         };
     }, [query]);
 
+    useEffect(() => {
+        onSetFlights(flights);
+    }, [flights, onSetFlights]);
+
     const handleClose = () => {
         setQuery("");
-        setFlightIds([]);
+        setFlights([]);
         setShowDropdown(false);
     };
 
@@ -54,10 +59,12 @@ const SearchBar = () => {
                 </button>
             )}
             {isLoading && <p>Loading...</p>}
-            {!isLoading && showDropdown && flightIds.length > 0 && (
+            {!isLoading && showDropdown && flights.length > 0 && (
                 <ul className="dropdown">
-                    {flightIds.map((flightId, index) => (
-                        <li key={index}>{flightId}</li>
+                    {flights.map((flight, index) => (
+                        <li key={index}>
+                            From: {flight?.from} <br /> To: {flight?.to}
+                        </li>
                     ))}
                 </ul>
             )}

@@ -32,9 +32,11 @@ const FlightCard = ({ flight, isSubscribed, onSubscribe, onUnsubscribe }) => (
         <p>
             <b>Scheduled Arrival</b>: {new Date(flight.scheduled_arrival).toLocaleString()}
         </p>
-        <button className={`${isSubscribed && "unsubscribed"}`} onClick={() => (isSubscribed ? onUnsubscribe(flight._id) : onSubscribe(flight._id))}>
-            {isSubscribed ? "Unsubscribe" : "Subscribe"}
-        </button>
+        {onSubscribe && (
+            <button className={`${isSubscribed && "unsubscribed"}`} onClick={() => (isSubscribed ? onUnsubscribe(flight._id) : onSubscribe(flight._id))}>
+                {isSubscribed ? "Unsubscribe" : "Subscribe"}
+            </button>
+        )}
     </div>
 );
 

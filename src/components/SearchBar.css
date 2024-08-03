@@ -40,6 +40,7 @@
 .search-bar ul.dropdown li {
     padding: 10px;
     cursor: pointer;
+    border-bottom: 1px solid black;
 }
 
 .search-bar ul.dropdown li:hover {
