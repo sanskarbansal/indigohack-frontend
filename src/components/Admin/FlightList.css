@@ -1,0 +1,126 @@
+.flight-list {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.flight-list h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.flight-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.flight-table th,
+.flight-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.flight-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.flight-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.flight-table tr:hover {
+    background-color: black;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.actions button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 4px;
+}
+
+.actions button.edit {
+    background-color: #4caf50;
+}
+
+.actions button.delete {
+    background-color: #f44336;
+}
+
+.actions button:hover {
+    opacity: 0.8;
+}
+
+.edit-flight {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 4px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.edit-flight h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-flight form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-flight form label {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.edit-flight form input {
+    padding: 8px;
+    width: 80%;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.edit-flight form button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.edit-flight form button.save {
+    background-color: #4caf50;
+}
+
+.edit-flight form button.cancel {
+    background-color: #f44336;
+    margin-left: 10px;
+}
+
+@media (max-width: 1260px) {
+    .flight-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 960px) {
+    .flight-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

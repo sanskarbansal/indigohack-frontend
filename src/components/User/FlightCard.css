@@ -1,0 +1,33 @@
+.flight-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.flight-card h3 {
+    margin: 0 0 10px 0;
+}
+
+.flight-card p {
+    margin: 5px 0;
+}
+
+.flight-card button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0073e6;
+    color: white;
+    cursor: pointer;
+}
+
+.flight-card button:hover {
+    background-color: #005bb5;
+}
+
+.unsubscribed.unsubscribed {
+    background-color: red;
+}
